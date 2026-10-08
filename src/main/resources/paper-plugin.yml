@@ -1,0 +1,7 @@
+name: PackForge
+version: '${version}'
+
+main: me.mangokevin.packforge.PackForge
+api-version: '26.3'
+load: STARTUP
+description: Builds, hosts and sends a server resource pack from plain PNG folders.

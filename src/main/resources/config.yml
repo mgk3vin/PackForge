@@ -1,0 +1,49 @@
+# PackForge: builds the resource pack from plugins/PackForge/assets/
+# Rebuild and resend with /pack reload
+
+# Namespace for all generated files and keys (item models: <namespace>:<name>)
+namespace: custom
+
+pack:
+  description: "Server Resources"
+  # Resource pack format of your Minecraft version (26.3 = 97)
+  min-format: 97
+  max-format: 97
+
+# Built-in web server that hosts the pack.zip
+host:
+  enabled: true
+  bind: "0.0.0.0"
+  port: 8163
+  # URL players download the pack from. localhost only works for a client on the same PC.
+  # For other players use your public IP or domain (port must be forwarded) or upload the zip
+  # somewhere else, set enabled: false and put that URL here.
+  public-url: "http://localhost:8163/pack.zip"
+
+send:
+  on-join: true
+  # Required packs: players who decline get disconnected by their client
+  required: true
+  prompt: "<gold>This server needs its resource pack for custom menus and icons.</gold>"
+
+items:
+  # Folders (relative to assets/items) whose PNGs are held like tools (minecraft:item/handheld)
+  handheld-folders: [ "weapon" ]
+
+glyphs:
+  # Size of glyphs from assets/glyphs. 8/7 matches normal text height.
+  height: 8
+  ascent: 7
+  # Per-glyph overrides, e.g. a bigger logo
+  overrides:
+    logo:
+      height: 16
+      ascent: 12
+
+gui:
+  # Menu backgrounds from assets/guis are drawn over the vanilla container texture.
+  # ascent 13 puts the top edge of the image on the top edge of the window.
+  ascent: 13
+  # Horizontal position of the inventory title inside the window (vanilla: 8)
+  title-offset: 8
+  overrides: {}
